@@ -10,38 +10,40 @@ import Account from './component/Account'
 import Appmapview from './component/Appmapview'
 import About from './component/About'
 import Profile from './component/Profile'
+import Contact from './component/Contact'
 
 const MainNavigator = createStackNavigator({
+    Contact: {
+        screen: Contact
+    },
+
     Home: {
         screen: HomeScreen
     },
     Screen2: {
         screen: Screen2
     },
-    Opening:{
-        screen:Opening
+    Opening: {
+        screen: Opening
     },
-    Trialscreen:{
-        screen:Trialscreen
+    Trialscreen: {
+        screen: Trialscreen
     },
-    compDetails:{
-        screen:compDetails
+    compDetails: {
+        screen: compDetails
     },
-    Account:{
-        screen:Account
+    Account: {
+        screen: Account
     },
-    Appmapview:{
-        screen:Appmapview
+    Appmapview: {
+        screen: Appmapview
     },
-    About:{
-        screen:About
+    About: {
+        screen: About
     },
-    Profile:{
-        screen:Profile
+    Profile: {
+        screen: Profile
     }
-
-    
-
 });
 
 const App = createAppContainer(MainNavigator);

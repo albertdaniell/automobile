@@ -28,53 +28,43 @@ import {
     Col
 } from 'native-base';
 import Splash from './Spash'
-import { SMS } from 'expo';
-
-
+import {SMS} from 'expo';
 
 export default class Account extends React.Component {
 
     static navigationOptions = {
-        title:'Setting',
+        title: 'Setting',
         headerStyle: {
-            backgroundColor: 'orange',
-          },
-          headerTintColor: '#fff',
+            backgroundColor: 'orange'
+        },
+        headerTintColor: '#fff'
     };
-   
-    componentDidMount(){
-      
-    
-    }
 
-    tellAFriend(){
+    componentDidMount() {}
+
+    tellAFriend() {
         const isAvailable = SMS.isAvailableAsync();
         if (isAvailable) {
-            const { result } =  SMS.sendSMSAsync([''], 'Please download the app via this link');
-            if(result){
+            const {result} = SMS.sendSMSAsync([''], 'Please download the app via this link');
+            if (result) {
                 // alert(0)
             }
 
         } else {
-          // misfortune... there's no SMS available on this device
-          alert("error")
+            // misfortune... there's no SMS available on this device
+            alert("error")
         }
     }
-    
 
-    
     constructor(props) {
         super(props)
 
         const {navigation} = this.props;
         const cId = navigation.getParam('companyId', 'companyId');
 
-        
-
         this.state = {
 
-            companyId:cId
-
+            companyId: cId
 
         }
     }
@@ -82,25 +72,27 @@ export default class Account extends React.Component {
     render() {
         const {navigate} = this.props.navigation;
 
-        // const { navigation } = this.props;
-        // const itemId = navigation.getParam('companyId', 'NO-ID');
-    
+        // const { navigation } = this.props; const itemId =
+        // navigation.getParam('companyId', 'NO-ID');
+
         return (
-            <FadeInView style={{backgroundColor:'white'}}>
-{/* 
+            <FadeInView style={{
+                backgroundColor: 'white'
+            }}>
+                {/*
             <View
                         style={{
                         backgroundColor: '#b57800',
                         padding: 10
                     }}></View> */}
-{/* 
+                {/*
                     <Header
                         style={{
                         backgroundColor: 'orange',
                         opacity: .8
                     }}>
                         <Left>
-                         <Text onPress={()=> navigate.history.goBack()}>Back</Text> 
+                         <Text onPress={()=> navigate.history.goBack()}>Back</Text>
                         </Left>
                         <Body
                             style={{
@@ -120,61 +112,90 @@ export default class Account extends React.Component {
                             </TouchableOpacity>
                         </Right>
                     </Header> */}
-         <View style={{marginTop:0}}>
+                <View style={{
+                    marginTop: 0
+                }}>
 
-      
-       
-      
-         <List>
-           <ListItem itemDivider>
-             
-           </ListItem>                    
-          
-           <TouchableOpacity
-           onPress={()=>navigate('Profile')}
-            style={{backfaceColor:'red',width:'100%',padding:20,borderBottomColor:'#ccc',borderBottomWidth:1}}>
-           <Text>Account</Text>
-           </TouchableOpacity>
-          
-         
-           <ListItem itemDivider>
-         
-           </ListItem> 
+                    <List>
+                        <ListItem itemDivider></ListItem>
 
-           <TouchableOpacity 
-           onPress={()=>navigate('About')}
-           style={{backfaceColor:'red',width:'100%',padding:20,borderBottomColor:'#ccc',borderBottomWidth:1}}>
-           <Text>About</Text>
-           </TouchableOpacity> 
+                        <TouchableOpacity
+                            onPress={() => navigate('Profile')}
+                            style={{
+                            backfaceColor: 'red',
+                            width: '100%',
+                            padding: 20,
+                            borderBottomColor: '#ccc',
+                            borderBottomWidth: 1
+                        }}>
+                            <Text>Account</Text>
+                        </TouchableOpacity>
 
-           <TouchableOpacity
-           onPress={this.tellAFriend}
-            style={{backfaceColor:'red',width:'100%',padding:20,borderBottomColor:'#ccc',borderBottomWidth:1}}>
-           <Text>Tell a friend via SMS</Text>
-           </TouchableOpacity>
+                        <ListItem itemDivider></ListItem>
 
-           <TouchableOpacity
-           
-            style={{backfaceColor:'red',width:'100%',padding:20,borderBottomColor:'#ccc',borderBottomWidth:1}}>
-           <Text>Share</Text>
-           </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => navigate('Contact')}
+                            style={{
+                            backfaceColor: 'red',
+                            width: '100%',
+                            padding: 20,
+                            borderBottomColor: '#ccc',
+                            borderBottomWidth: 1
+                        }}>
+                            <Text>Contact and Report</Text>
+                        </TouchableOpacity>
 
-           <ListItem itemDivider>
-         
-         </ListItem> 
+                        <TouchableOpacity
+                            onPress={() => navigate('About')}
+                            style={{
+                            backfaceColor: 'red',
+                            width: '100%',
+                            padding: 20,
+                            borderBottomColor: '#ccc',
+                            borderBottomWidth: 1
+                        }}>
+                            <Text>About</Text>
+                        </TouchableOpacity>
 
-         
+                        <TouchableOpacity
+                            onPress={this.tellAFriend}
+                            style={{
+                            backfaceColor: 'red',
+                            width: '100%',
+                            padding: 20,
+                            borderBottomColor: '#ccc',
+                            borderBottomWidth: 1
+                        }}>
+                            <Text>Tell a friend via SMS</Text>
+                        </TouchableOpacity>
 
-         <TouchableOpacity style={{backfaceColor:'red',width:'100%',padding:20,borderBottomColor:'#ccc',borderBottomWidth:1}}>
-         <Text>Logout</Text>
-         </TouchableOpacity>
+                        <TouchableOpacity
+                            style={{
+                            backfaceColor: 'red',
+                            width: '100%',
+                            padding: 20,
+                            borderBottomColor: '#ccc',
+                            borderBottomWidth: 1
+                        }}>
+                            <Text>Share</Text>
+                        </TouchableOpacity>
 
+                        <ListItem itemDivider></ListItem>
 
-           
-         </List>
- 
-     
-         </View>
+                        <TouchableOpacity
+                            style={{
+                            backfaceColor: 'red',
+                            width: '100%',
+                            padding: 20,
+                            borderBottomColor: '#ccc',
+                            borderBottomWidth: 1
+                        }}>
+                            <Text>Logout</Text>
+                        </TouchableOpacity>
+
+                    </List>
+
+                </View>
             </FadeInView>
         );
     }

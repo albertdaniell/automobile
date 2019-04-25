@@ -35,33 +35,37 @@ export default class Trial extends React.Component {
         const {navigation} = this.props;
         const cId = navigation.getParam('companyId', 'companyId');
 
-        
-
         this.state = {
 
-            companyId:cId
-
+            companyId: cId
 
         }
     }
 
     render() {
-        // const { navigation } = this.props;
-        // const itemId = navigation.getParam('companyId', 'NO-ID');
-    
+        // const { navigation } = this.props; const itemId =
+        // navigation.getParam('companyId', 'NO-ID');
+
         return (
             <FadeInView style={{}}>
-               <View style={{backgroundColor:'#b57800',padding:10}}>
+                <View
+                    style={{
+                    backgroundColor: '#b57800',
+                    padding: 10
+                }}></View>
 
-               </View>
-
-               <Header style={{backgroundColor:'orange'}}>
+                <Header
+                    style={{
+                    backgroundColor: 'orange'
+                }}>
                     <Left>
                         <Button transparent>
                             <Icon name='arrow-back'/>
                         </Button>
                     </Left>
-                    <Body style={{padding:10}}>
+                    <Body style={{
+                        padding: 10
+                    }}>
                         <Text>Header</Text>
                     </Body>
                     <Right>
@@ -77,7 +81,7 @@ export default class Trial extends React.Component {
                     padding: 10
                 }}>
 
-                <Text>itemId: {this.state.companyId}</Text>
+                    <Text>itemId: {this.state.companyId}</Text>
 
                     <Text>This is the trial screeennnnn</Text>
 

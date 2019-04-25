@@ -1,10 +1,10 @@
 {
-  "devToolsPort": 19002,
+  "devToolsPort": 19003,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 5068,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "packagerPid": 14790,
+  "expoServerNgrokUrl": "https://tr-v9w.aurasafira.automobile.exp.direct",
+  "packagerNgrokUrl": "https://packager.tr-v9w.aurasafira.automobile.exp.direct",
+  "ngrokPid": 14884,
   "webpackServerPort": null
 }
